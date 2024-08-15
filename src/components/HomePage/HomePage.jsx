@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './HomePage.css';
+import { Link } from 'react-router-dom';
 
 import amazon_logo from '../../assets/amazon_logo.png';
 import google_logo from '../../assets/google_logo.png';
@@ -17,31 +18,24 @@ import music_icon from '../../assets/music_icon.png';
 
 const HomePage = () => {
   const [searchFocus, setSearchFocus] = useState(false);
-  const [activeField, setActiveField] = useState(null);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveField(Math.floor(Math.random() * 8));
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   const fields = [
-    { icon: programming_icon, title: "Programming & Tech" },
-    { icon: graphics_icon, title: "Graphics & Design" },
-    { icon: digital_icon, title: "Digital Marketing" },
-    { icon: writing_icon, title: "Writing & Translation" },
-    { icon: video_icon, title: "Video & Animation" },
-    { icon: ai_icon, title: "AI Services" },
-    { icon: music_icon, title: "Music & Audio" },
-    { icon: business_icon, title: "Business" }
+    { icon: programming_icon, title: "Programming & Tech", link:'/program_tech' },
+    { icon: graphics_icon, title: "Graphics & Design", link:'/graphic_design' },
+    { icon: digital_icon, title: "Digital Marketing", link:'/digital_market' },
+    { icon: writing_icon, title: "Writing & Translation", link:'/writing_translation' },
+    { icon: video_icon, title: "Video & Animation", link:'/video_animation' },
+    { icon: ai_icon, title: "AI Services", link:'/ai_services' },
+    { icon: music_icon, title: "Music & Audio", link:'/music_audio' },
+    { icon: business_icon, title: "Business", link:'/business' }
   ];
 
   return (
     <div className='homepage'>
       <div className='container'>
-        <h1 className='heading-text' data-text="Find the right">Find the right <span>freelance</span></h1>
-        <h1 className='heading-text' data-text="service, right away">service, right away</h1>
+        <h1 className='heading-text'>
+          Find the freelance service, <br/> right away at <span> Oryve </span>
+        </h1>
         <div className={`input-container ${searchFocus ? 'focus' : ''}`}>
           <input 
             placeholder='Search for any service...' 
@@ -62,14 +56,13 @@ const HomePage = () => {
       </div>
       <div className='fields'>
         {fields.map((field, index) => (
-          <div 
-            className={`field-1 ${activeField === index ? 'active' : ''}`} 
-            key={index}
-            onMouseEnter={() => setActiveField(index)}
-            onMouseLeave={() => setActiveField(null)}
-          >
-            <img src={field.icon} alt={field.title} />
-            <h3>{field.title}</h3>
+          <div className='field' key={index}>
+            <Link to={field.link} className='field-link'>
+              <div className='field-icon'>
+                <img src={field.icon} alt={field.title} />
+              </div>
+              <h3>{field.title}</h3>
+            </Link>
           </div>
         ))}
       </div>

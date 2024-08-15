@@ -1,0 +1,152 @@
+/* Container for the AI component */
+.ai-container {
+  max-width: 1200px;
+  margin-top: 120px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ff0066, #4a00e0);
+  color: #fff;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Header of the AI component */
+.ai-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.ai-header h1 {
+  font-size: 44px;
+  font-weight: bold;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  background: linear-gradient(90deg, #96204f, #430ead);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.ai-header p.ai-intro {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Chatbox styling */
+.ai-chatbox {
+  height: 500px;
+  overflow-y: auto;
+  border-radius: 15px;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message styling */
+.message {
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 25px;
+  max-width: 80%;
+  font-size: 16px;
+  position: relative;
+  word-wrap: break-word;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Added text shadow */
+}
+
+/* User message styling */
+.user-message {
+  background: linear-gradient(135deg, #ff0066, #e50077);
+  color: #fff;
+  margin-left: auto;
+  text-align: right;
+  border: 1px solid #e50077;
+  box-shadow: 0 4px 10px rgba(255, 0, 102, 0.4);
+  animation: slideInRight 0.5s ease-out;
+}
+
+/* AI message styling */
+.ai-message {
+  background: linear-gradient(135deg, #4a00e0, #8e2de2);
+  color: #fff;
+  border: 1px solid #8e2de2;
+  box-shadow: 0 4px 10px rgba(74, 0, 224, 0.4);
+  animation: slideInLeft 0.5s ease-out;
+}
+
+/* Keyframes for slide-in-right effect */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Keyframes for slide-in-left effect */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Input container styling */
+.ai-input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 15px;
+}
+
+/* Input field styling */
+.ai-input-container input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 16px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Added text shadow */
+}
+
+/* Input field focus styling */
+.ai-input-container input:focus {
+  border-color: #4a00e0;
+  outline: none;
+  box-shadow: 0 0 5px rgba(74, 0, 224, 0.6);
+}
+
+/* Button styling */
+.ai-input-container button {
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #ff0066, #4a00e0);
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Added text shadow */
+}
+
+/* Button hover effect */
+.ai-input-container button:hover {
+  background: linear-gradient(135deg, #e50077, #8e2de2);
+  box-shadow: 0 4px 10px rgba(255, 0, 102, 0.4);
+}
+
+/* Button active state */
+.send-button.active {
+  background: linear-gradient(135deg, #d6006c, #6a00d4);
+}

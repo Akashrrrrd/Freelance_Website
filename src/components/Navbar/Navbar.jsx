@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
-import { FaSearch, FaBriefcase, FaUserPlus, FaQuestionCircle, FaBell, FaUser } from 'react-icons/fa';
+import { FaSearch, FaBriefcase, FaUserPlus, FaQuestionCircle, FaBell, FaUser, FaHome, FaStar, FaBook, FaRobot } from 'react-icons/fa';
 import LoginPopup from '../../components/LoginPopup/LoginPopup';
 
 const Navbar = () => {
@@ -27,11 +27,15 @@ const Navbar = () => {
   }, []);
 
   const menuItems = [
+    { name: 'Home', path: '/', icon: FaHome },
     { name: 'Find Work', path: '/find_work', icon: FaBriefcase },
     { name: 'Post a Job', path: '/post_job', icon: FaUserPlus },
-    { name: 'Browse Freelancers', path: '/browse_freelancers', icon: FaSearch },
     { name: 'How It Works', path: '/how_it_works', icon: FaQuestionCircle },
+    { name: 'Top Ratings', path: '/rating_page', icon: FaStar },
+    { name: 'Learning Hub', path: '/learning_hub', icon: FaBook },
+    { name: 'AI', path: '/ai', icon: FaRobot },
   ];
+  
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -97,7 +101,7 @@ const Navbar = () => {
           </ul>
         </div>
       </nav>
-      {showLogin && <LoginPopup setShowLogin={setShowLogin} />} {/* Conditionally render the LoginPopup */}
+      {showLogin && <LoginPopup setShowLogin={setShowLogin} />}
     </>
   );
 };

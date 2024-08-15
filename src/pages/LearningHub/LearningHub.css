@@ -1,0 +1,144 @@
+/* src/components/LearningHub/LearningHub.css */
+.learning-hub {
+    padding: 60px;
+    background: linear-gradient(135deg, #0f2027, #203a43); /* Deep, immersive gradient */
+    color: #ffffff; /* Light text color for readability */
+    font-family: 'Roboto', sans-serif;
+    margin-top: 120px;
+    margin-bottom: 60px;
+    max-width: 1400px;
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.learning-hub-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.learning-hub-header h1 {
+    font-size: 4.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #00e5ff, #ff00ab); /* Gradient text */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textGlow 1.5s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.7), 0 0 20px rgba(0, 229, 255, 0.5);
+}
+
+.learning-hub-header p {
+    font-size: 1.7rem;
+    color: #c0c0c0; /* Slightly lighter text for subtitle */
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: center;
+}
+
+.course-card {
+    background: #1e1e1e; /* Darker background for the card */
+    border-radius: 20px;
+    padding: 25px;
+    width: 350px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #ffffff;
+    backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+}
+
+.course-card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.course-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.course-title {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.course-card-header:hover .course-title {
+    color: #00e5ff; /* Color change on hover */
+}
+
+.course-ribbon {
+    background: linear-gradient(45deg, #ff00ab, #00e5ff);
+    color: #ffffff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    transform: rotate(45deg);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.course-description {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #e0e0e0; /* Light gray text color for description */
+}
+
+.course-rating {
+    margin-bottom: 15px;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #ffd700;
+}
+
+.star.empty {
+    color: #333333;
+}
+
+.star.half {
+    color: #ffd700;
+}
+
+.course-link {
+    display: inline-block;
+    padding: 15px 25px;
+    background: linear-gradient(45deg, #00e5ff, #ff00ab); /* Gradient background for button */
+    color: #121212; /* Dark text color for contrast */
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial button shadow */
+}
+
+.course-link:hover {
+    background: linear-gradient(45deg, #ff00ab, #00e5ff); /* Inverse gradient on hover */
+    color: #ffffff; /* Light text color on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+

@@ -21,10 +21,10 @@ body {
 }
 
 .post-job {
-  padding: 100px 50px;
+  padding: 30px 60px;
   max-width: 800px;
   margin-bottom: 40px;
-  margin-top: -40px;
+  margin-top: 120px;
   margin-right: auto;
   margin-left: auto;
   background: linear-gradient(145deg, #1c2a4a, #132f4c);

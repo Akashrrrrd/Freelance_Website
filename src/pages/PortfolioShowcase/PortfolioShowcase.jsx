@@ -51,7 +51,7 @@ const PortfolioShowcase = () => {
             key={index}
             onMouseEnter={() => setHoveredImage(index)}
             onMouseLeave={() => setHoveredImage(null)}
-            onClick={() => handleClick(image.id)} // Navigate to owner page on click
+            onClick={() => handleClick(image.id)} 
           >
             <img src={image.src} alt={`Portfolio ${index + 1}`} />
             <div className='image-overlay'>

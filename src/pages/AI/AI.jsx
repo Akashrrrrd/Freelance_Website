@@ -8,19 +8,18 @@ const AI = () => {
   const chatboxRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Scroll to the bottom of the chatbox whenever a new message is added
   useEffect(() => {
     if (chatboxRef.current) {
       chatboxRef.current.scrollTop = chatboxRef.current.scrollHeight;
     }
   }, [messages]);
 
-  // Focus on the input field when the component mounts
   useEffect(() => {
     inputRef.current.focus();
-    // Set default message when the component is first rendered
     if (messages.length === 0) {
-      setMessages([{ text: "How can I help you today?", sender: 'ai' }]);
+      setMessages([
+        { text: "Welcome to Oryve's AI! How can I assist you today?", sender: 'ai' }
+      ]);
     }
   }, []);
 
@@ -52,7 +51,10 @@ const AI = () => {
 
   return (
     <div className="ai-container">
-      <div className="ai-header">AI Assistance</div>
+      <div className="ai-header">
+        <h1>Oryve's AI</h1>
+        <p className="ai-intro">Your intelligent assistant for all your needs.</p>
+      </div>
       <div className="ai-chatbox" ref={chatboxRef}>
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.sender}-message`}>
@@ -65,7 +67,7 @@ const AI = () => {
           type="text"
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Type your question..."
+          placeholder="Type your message..."
           ref={inputRef}
           onKeyPress={(e) => {
             if (e.key === 'Enter') {

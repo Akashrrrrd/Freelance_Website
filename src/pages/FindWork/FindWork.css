@@ -13,7 +13,11 @@
 .find-work {
   padding: 40px;
   max-width: 1200px;
-  margin: 0 auto;
+  margin-top: 120px;
+  margin-bottom: 40px;
+  border-radius: 20px;
+  margin-left: auto;
+  margin-right: auto;
   background: var(--background-color);
   color: var(--text-color);
   position: relative;

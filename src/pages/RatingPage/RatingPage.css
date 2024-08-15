@@ -1,0 +1,175 @@
+:root {
+    --primary-bg: #0c0c1b; /* Deep, dark blue for a rich background */
+    --secondary-bg: #1f1f3d; /* A complementary, slightly lighter blue for contrast */
+    --highlight-color: #82aaef; /* Bright cyan for a futuristic touch */
+    --text-light: #e0e0e0; /* Light gray for readable text */
+    --text-dark: #ffffff; /* Pure white for high contrast text */
+    --star-color: #ffab00; /* Warm gold for star ratings */
+    --shadow-color: rgba(0, 153, 255, 0.5); /* Semi-transparent cyan shadow */
+    --transition-duration: 0.3s; /* Duration for smooth transitions */
+}
+
+.rating-page {
+    background: linear-gradient(135deg, var(--primary-bg), var(--secondary-bg));
+    color: var(--text-light);
+    font-family: 'Roboto', sans-serif;
+    padding: 40px;
+    border-radius: 20px;
+    max-width: 1400px;
+    height: auto;
+    margin: 120px auto 40px;
+    box-shadow: 0px 10px 20px var(--shadow-color);
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    position: relative;
+}
+
+.content {
+    display: flex;
+    flex: 1;
+    gap: 30px;
+    position: relative;
+}
+
+.profile-section {
+    flex: 1;
+    background: var(--secondary-bg);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0px 5px 15px var(--shadow-color);
+    position: relative;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--highlight-color);
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.profile-details h1 {
+    font-size: 2.4rem;
+    margin-bottom: 10px;
+    color: var(--highlight-color);
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.profile-details p {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.rating-score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.rating-score span {
+    margin-right: 5px;
+}
+
+.star-icon {
+    width: 35px;
+    height: 35px;
+    fill: var(--star-color);
+    stroke: var(--star-color);
+    filter: drop-shadow(0px 0px 6px var(--star-color));
+}
+
+.user-list {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-sort {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    width: 220px;
+    background-color: #333;
+    color: var(--text-light);
+    transition: background-color var(--transition-duration) ease;
+}
+
+.search-input:focus {
+    background-color: #444;
+}
+
+.sort-select {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background: var(--secondary-bg);
+    color: var(--text-light);
+}
+
+.users-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.user-card {
+    background: var(--secondary-bg);
+    border-radius: 15px;
+    padding: 30px 20px;
+    box-shadow: 0px 5px 15px var(--shadow-color);
+    cursor: pointer;
+    transition: background var(--transition-duration) ease, transform var(--transition-duration) ease;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.user-card:hover {
+
+    transform: scale(1.05);
+}
+
+.user-card.selected {
+    background: #444;
+}
+
+.user-rating {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.top-rating-heading {
+    font-size: 3.4rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: var(--highlight-color);
+    text-align: center;
+    text-shadow: 0 0 5px var(--highlight-color), 0 0 10px var(--highlight-color);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

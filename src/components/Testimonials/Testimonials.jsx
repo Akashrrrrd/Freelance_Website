@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Testimonials.css';
-import left_arrow_icon from '../../assets/left_arrow_icon.png'
-import right_arrow_icon from '../../assets/right_arrow_icon.png'
+import left_arrow_icon from '../../assets/left_arrow_icon.png';
+import right_arrow_icon from '../../assets/right_arrow_icon.png';
 
 const testimonialsData = [
   {
@@ -38,7 +38,6 @@ const testimonialsData = [
   },
 ];
 
-
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
 
@@ -52,39 +51,37 @@ const Testimonials = () => {
 
   return (
     <div className='testimonials'>
-      <h1>What Our Clients Say About <span>Oryve</span></h1>
-      <div className='testimonial-slider-container'>
+      <h1 className='heading'>What Our Clients Say About <span>Oryve</span></h1>
+      <div className='testimonial-slider'>
         <div className='testimonial-slide'>
           <div className='testimonial-content'>
-            <div className='testimonial-left'>
-              <div className='avatar-container'>
-                <img src={testimonialsData[currentTestimonial].avatar} alt={testimonialsData[currentTestimonial].name} className='avatar' />
-              </div>
+            <div className='avatar-container'>
+              <img src={testimonialsData[currentTestimonial].avatar} alt={testimonialsData[currentTestimonial].name} className='avatar' />
             </div>
-            <div className='testimonial-right'>
+            <div className='testimonial-details'>
               <h4>{testimonialsData[currentTestimonial].name}</h4>
               <p className='role'>{testimonialsData[currentTestimonial].role} | <span>{testimonialsData[currentTestimonial].company}</span></p>
               <p className='quote'>{testimonialsData[currentTestimonial].quote}</p>
             </div>
           </div>
         </div>
-      </div>
-      <div className='testimonial-nav'>
-        <button className='nav-button prev' onClick={prevTestimonial}>
-          <img src={left_arrow_icon} alt='Previous' />
-        </button>
-        <div className='testimonial-indicators'>
-          {testimonialsData.map((_, index) => (
-            <span 
-              key={index} 
-              className={`indicator ${index === currentTestimonial ? 'active' : ''}`}
-              onClick={() => setCurrentTestimonial(index)}
-            ></span>
-          ))}
+        <div className='testimonial-nav'>
+          <button className='nav-button prev' onClick={prevTestimonial}>
+            <img src={left_arrow_icon} alt='Previous' />
+          </button>
+          <div className='testimonial-indicators'>
+            {testimonialsData.map((_, index) => (
+              <span 
+                key={index} 
+                className={`indicator ${index === currentTestimonial ? 'active' : ''}`}
+                onClick={() => setCurrentTestimonial(index)}
+              ></span>
+            ))}
+          </div>
+          <button className='nav-button next' onClick={nextTestimonial}>
+            <img src={right_arrow_icon} alt='Next' />
+          </button>
         </div>
-        <button className='nav-button next' onClick={nextTestimonial}>
-          <img src={right_arrow_icon} alt='Next' />
-        </button>
       </div>
     </div>
   );
