@@ -34,6 +34,7 @@ import RatingPage from './pages/RatingPage/RatingPage';
 import LearningHub from './pages/LearningHub/LearningHub';
 import ScrollToTop from './components/ScrollToTop';
 import AI from './pages/AI/AI';
+import TechNewsPage from './pages/TechNewsPage/TechNewsPage';
 
 const App = () => {
   return (
@@ -72,6 +73,7 @@ const App = () => {
         <Route path='/rating_page' element={<RatingPage />} />
         <Route path='/learning_hub' element={<LearningHub />} />
         <Route path='/ai' element={<AI/>}/>
+        <Route path='/tech_news' element={<TechNewsPage/>}/>
       </Routes>
       <Footer />
     </BrowserRouter>

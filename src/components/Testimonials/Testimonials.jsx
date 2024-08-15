@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Testimonials.css';
 import left_arrow_icon from '../../assets/left_arrow_icon.png';
 import right_arrow_icon from '../../assets/right_arrow_icon.png';
+import test_img_1 from '../../assets/test_img_1.png';
+import test_img_2 from '../../assets/test_img_2.png';
+import test_img_3 from '../../assets/test_img_3.png';
+import test_img_4 from '../../assets/test_img_4.png';
 
 const testimonialsData = [
   {
@@ -10,7 +14,7 @@ const testimonialsData = [
     role: 'Marketing Director',
     company: 'Tech Innovations Inc',
     quote: "Oryve transformed our e-commerce strategy with their tailored solutions. Their attention to detail and personalized approach helped us achieve significant growth in online sales.",
-    avatar: 'path_to_ravi_sharma_avatar.jpg',
+    avatar: {test_img_1},
   },
   {
     id: 2,
@@ -18,7 +22,7 @@ const testimonialsData = [
     role: 'Chief Operating Officer',
     company: 'Retail Solutions Ltd',
     quote: "Working with Oryve was a game-changer for our company. Their innovative solutions and exceptional service significantly boosted our operational efficiency.",
-    avatar: 'path_to_priya_patel_avatar.jpg',
+    avatar: {test_img_2},
   },
   {
     id: 3,
@@ -26,7 +30,7 @@ const testimonialsData = [
     role: 'CEO',
     company: 'E-Commerce Experts',
     quote: "Oryve's expertise in e-commerce is unmatched. Their customized solutions helped us expand our market reach and increase our revenue substantially.",
-    avatar: 'path_to_amit_singh_avatar.jpg',
+    avatar: {test_img_3},
   },
   {
     id: 4,
@@ -34,26 +38,43 @@ const testimonialsData = [
     role: 'Product Manager',
     company: 'Digital Goods Corp',
     quote: "Oryve provided us with outstanding service and innovative solutions that propelled our product sales to new heights. We couldn't be happier with the results.",
-    avatar: 'path_to_sneha_desai_avatar.jpg',
+    avatar: {test_img_4},
   },
 ];
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      nextTestimonial();
+    }, 10000);
+
+    return () => clearInterval(interval);
+  }, [currentTestimonial]);
 
   const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev === testimonialsData.length - 1 ? 0 : prev + 1));
+    if (!isAnimating) {
+      setIsAnimating(true);
+      setCurrentTestimonial((prev) => (prev === testimonialsData.length - 1 ? 0 : prev + 1));
+      setTimeout(() => setIsAnimating(false), 500);
+    }
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev === 0 ? testimonialsData.length - 1 : prev - 1));
+    if (!isAnimating) {
+      setIsAnimating(true);
+      setCurrentTestimonial((prev) => (prev === 0 ? testimonialsData.length - 1 : prev - 1));
+      setTimeout(() => setIsAnimating(false), 500);
+    }
   };
 
   return (
     <div className='testimonials'>
       <h1 className='heading'>What Our Clients Say About <span>Oryve</span></h1>
       <div className='testimonial-slider'>
-        <div className='testimonial-slide'>
+        <div className={`testimonial-slide ${isAnimating ? 'animating' : ''}`}>
           <div className='testimonial-content'>
             <div className='avatar-container'>
               <img src={testimonialsData[currentTestimonial].avatar} alt={testimonialsData[currentTestimonial].name} className='avatar' />

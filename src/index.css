@@ -21,5 +21,9 @@ body {
 
 .sample-image-container,
 .sample-image-container img {
-  transform: rotate(0deg) !important; /* Ensures no rotation on these elements */
+  transform: rotate(0deg) !important; 
+}
+
+button{
+  animation: ease-in 0.3s;
 }

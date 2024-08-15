@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../assets/logo.png';
-import { FaSearch, FaBriefcase, FaUserPlus, FaQuestionCircle, FaBell, FaUser, FaHome, FaStar, FaBook, FaRobot } from 'react-icons/fa';
+import { FaSearch, FaBriefcase, FaUserPlus, FaQuestionCircle, FaBell, FaUser, FaHome, FaStar, FaBook, FaRobot, FaNewspaper } from 'react-icons/fa';
 import LoginPopup from '../../components/LoginPopup/LoginPopup';
 
 const Navbar = () => {
@@ -34,6 +34,7 @@ const Navbar = () => {
     { name: 'Top Ratings', path: '/rating_page', icon: FaStar },
     { name: 'Learning Hub', path: '/learning_hub', icon: FaBook },
     { name: 'AI', path: '/ai', icon: FaRobot },
+    { name: 'Tech News', path: '/tech_news', icon: FaNewspaper },
   ];
   
 

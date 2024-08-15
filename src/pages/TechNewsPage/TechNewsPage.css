@@ -1,0 +1,159 @@
+:root {
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #1e88e5;
+    --hover-color: #ff4081;
+    --card-bg: #1f1f1f;
+    --card-border: #333;
+    --shadow: rgba(0, 0, 0, 0.5);
+    --shadow-hover: rgba(0, 0, 0, 0.7);
+    --font-family: 'Roboto', sans-serif;
+  }
+  
+  .tech-news-page {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    padding: 60px 40px;
+    height: auto;
+    margin-top: 90px;
+    overflow: hidden;
+  }
+  
+  .tech-news-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  
+  .tech-news-header h1 {
+    font-size: 4rem;
+    margin: 0;
+    color: var(--primary-color);
+    text-shadow: 0 6px 12px var(--shadow);
+    letter-spacing: 1.5px;
+  }
+  
+  .tech-news-header p {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    margin-top: 10px;
+  }
+  
+  .news-section,
+  .trending-tech-section {
+    margin-bottom: 80px;
+  }
+  
+  .news-section h2,
+  .trending-tech-section h2 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+    position: relative;
+    font-weight: 700;
+  }
+  
+  .news-section h2::after,
+  .trending-tech-section h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 6px;
+    background: var(--primary-color);
+    margin: 15px auto 0;
+    border-radius: 3px;
+  }
+  
+  .news-list,
+  .tech-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    padding: 0;
+  }
+  
+  .news-card,
+  .tech-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 16px var(--shadow);
+    transition: all 0.4s ease;
+    color: var(--text-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .news-card:hover,
+  .tech-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px var(--shadow-hover);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .news-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+  }
+  
+  .news-card:hover .news-image {
+    transform: scale(1.1);
+  }
+  
+  .news-content h3 {
+    font-size: 1.6rem;
+    margin: 0;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .news-content p {
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.6;
+  }
+  
+  .news-meta {
+    font-size: 0.9rem;
+    color: var(--hover-color);
+    margin-top: 15px;
+  }
+  
+  .tech-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+  }
+  
+  .tech-card h3 {
+    font-size: 1.6rem;
+    margin: 0;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    font-weight: 600;
+  }
+  
+  .tech-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .tech-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .tech-card a:hover {
+    color: var(--hover-color);
+    transform: scale(1.05);
+  }
+  
